@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import CartWidget from "../common/CartWidget";
 
 const Navbar = () => {
     return (
@@ -23,8 +24,9 @@ const Navbar = () => {
                 </ul>
                 <div className="card-widget">
                     <div className="icon-avatar">
-                        <i className="fa-solid fa-user icon-user"></i>
+                     
                     </div>
+                    <CartWidget />
                 </div>
             </div>
         </nav>

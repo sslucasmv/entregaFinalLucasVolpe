@@ -1,53 +1,27 @@
-import React, { useState, useEffect } from "react";
-import ItemList from "./Itemlist";
-import Loader from "./Loader";
+import { useAppContext } from "../Context";
+import Item from "./Item";
 
+const ItemListContainer = () => {
+  const { productos } = useAppContext();
 
-const ItemListContainer = ({ productos , agregarAlCarrito}) => {
-   
-    // const [displayProducts, setDisplayProducts] = useState([]);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setDisplayProducts(productos); 
-    //     }, 900); 
-    // }, [productos]); 
-
-
-    return (
-        <>
-        {
-
-            productos.length === 0 ? 
-            <Loader />
-            :
-            <>
-           <div className="content-card">
-            <ItemList productos={productos} agregarAlCarrito={agregarAlCarrito}  />
-            </div>
-            </>
-        }
-        </>
-    )
+  return (
+    <div className="item-list-container">
+      {productos.length === 0 ? (
+        <p>Cargando...</p>
+      ) : (
+        productos.map(producto => (
+          <Item
+            key={producto.id}
+            id={producto.id}
+            title={producto.title}
+            price={producto.price}
+            img={producto.img}
+            category={producto.category}
+          />
+        ))
+      )}
+    </div>
+  );
 };
 
 export default ItemListContainer;
-
-
-
-    // if(productos.length===0) {
-    //     return (
-    //         <p>Cargando...</p>
-    //     )
-    // } else {
-    //     return (
-    //         <>
-    //                 <div className="content-card">
-    //                     <ItemList productos={productos}  />
-    //                 </div>
-         
-    //         </>
-    //     );
-    // }
-
-

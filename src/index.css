@@ -13,7 +13,6 @@
 }
 
 body {
-    background-color:#fff;
     margin: 0;
     padding: 0;
 }
@@ -264,6 +263,7 @@ nav img {
 .container-fluid {
     width: 100%;
     display: flex;
+    padding-bottom: 40px
 }
 
 .container-center {
@@ -295,6 +295,8 @@ h1.main-title::first-letter {
 
 .content-card {
     display: flex;
+    width: 400px;
+    height: 400px;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 20px;
@@ -302,6 +304,7 @@ h1.main-title::first-letter {
 
 .card {
     width: 252px;
+    float: left;
     min-height: 320px;
     margin: 10px;
     padding: 10px 10px 20px 10px;
